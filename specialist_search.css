@@ -1,0 +1,289 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+*::selection{
+    background-color: #dadadada;
+    color: black;
+}
+* {
+    scrollbar-width: thin; 
+    scrollbar-color: #000 #000; 
+    border-radius: 5px;
+  }
+::-webkit-scrollbar {
+    width: 5px; 
+    z-index: 99;
+  }
+::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 5px;
+  }
+
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+    border-radius: 5px;
+  }
+.main{
+    min-height: 100%;
+    width: 100%;
+    background-color: hsl(200, 20%, 95%);
+}
+#nav{
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(180, 50%, 93%);
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    border-bottom: 2px solid black;
+}
+#nav a{
+    text-decoration: none;
+    color: black;
+    font-family: "Nanum Gothic";
+    font-size: 15px;
+}
+#nright{
+   display: flex;
+   gap: 20px;
+}
+.turquoise-text {
+    display: inline-block;
+    position: relative;
+    color: black; 
+    transition: color 0.3s ease; 
+}
+
+.turquoise-text:hover {
+    color: hsl(180, 70%, 60%); 
+}
+
+.underline {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px; 
+    background-color: hsl(180, 70%, 60%); 
+    transform-origin: bottom right;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+}
+
+.turquoise-text:hover .underline {
+    transform-origin: bottom left;
+    transform: scaleX(1); 
+}
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+    display: none;
+    z-index: 200;
+}
+
+.scroll-text {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #000; 
+}
+
+.scroll-icon {
+    font-size: 30px; 
+    color: #000; 
+    animation: scrollIndicatorAnimation 1s infinite alternate; 
+}
+
+@keyframes scrollIndicatorAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+#hero{
+    width: 100%;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 32px;
+}
+#searchdiv{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.search-container {
+    position: relative;
+    width: 1000px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dadada;
+    box-shadow: 0 2px 5px rgba(70, 160, 160, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+.search-icon:hover{
+    box-shadow: 0 4px 10px rgba(70, 160, 160, 0.5);
+    border: none;
+}
+.search-bar:hover {
+    box-shadow: 0 4px 10px rgba(70, 160, 160, 0.5);
+    border: none;
+}
+.search-icon{
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #dadada;
+    box-shadow: 0 2px 5px rgba(70, 160, 160, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+.card{
+    position: relative;
+    width: 350px;
+    height: 190px;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 15px;
+    font-family: "Montserrat";
+}
+.card:hover{
+    height: 450px;
+}
+.card .imgBx{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    transition: 0.5s;
+    z-index: 10;
+   overflow: hidden;
+   border-radius: 15px;
+}
+.card:hover .imgBx{
+    width: 250px;
+    height: 250px;
+}
+
+.card .imgBx img{
+position: absolute;
+z-index: 1;
+top: 10px;
+left: 10px;
+width: calc(100% - 20px);
+height: calc(100% - 20px);
+
+}
+.card .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+.card .content .details{
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(145px);
+}
+.card:hover .content .details{
+    transform: translateY(0px);
+}
+.card .content .details h2{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #0994ff;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+.card .content .details h2 span{
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #000;
+    font-weight: bold;
+    text-transform: initial;
+}
+.card .content .details .data{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+.card .content .details h3{
+    font-size: 1em;
+    color: #0994ff;
+    line-height: 1.2em;
+    font-weight: 600;
+}
+.card .content .details .actionBtn{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.card .content .details .actionBtn button{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    background: #0994ff;
+    color: #222;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.card .content .details .actionBtn button:nth-child(2)
+{
+    background: #a1c4fd;
+}
+.card .content .details .actionBtn button:hover{
+    opacity: 1;
+}
+#specialists{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    display: none;
+}
+.row{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px 30px;
+    gap: 10px;
+}
+
